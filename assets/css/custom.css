@@ -1,0 +1,147 @@
+/**
+ * CUSTOM CSS
+ *
+ * Here you can add your custom CSS code.
+ */
+
+.t-title {
+  font-size: 3rem;
+  line-height: 0.91;
+}
+
+@media (min-width: 1024px) {
+  .c-header__header,
+  .c-header__content {
+    height: 60vh;
+  }
+}
+
+.c-header__inner-header,
+.c-header__inner-content {
+  position: relative;
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: normal;
+}
+.c-header__brand {
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 60px;
+}
+
+.c-header__avatar {
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+}
+
+.navbar a {
+  display: block;
+  color: #999;
+  text-align: right;
+  padding: 16px;
+  text-decoration: none;
+  float: right;
+  font-weight: bold;
+  border-bottom: 3px solid transparent;
+}
+
+.navbar a:hover {
+  border-bottom: 3px solid #e0a80d;
+  color: whitesmoke;
+}
+
+.game-card {
+  width: 100%;
+  margin: 0 auto 1.5rem auto;
+  min-height: 270px;
+  height: auto;
+}
+.game-img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.game-card-left {
+  padding: 0;
+}
+.game-card-left img {
+  height: 100%;
+  width: 100%;
+  min-height: 270px;
+}
+.game-card-right {
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  padding: 20px 40px;
+  margin: 0;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.game-card-right h2 {
+  margin-bottom: 0;
+}
+.game-card-right > .short-hr-left::after {
+  margin: 5px 0;
+}
+.short-hr-left::after {
+  border-top: 2px solid;
+  border-color: #e48632;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 60px;
+  margin: 13px 0 0 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  border-left: 2px solid #e48632;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.overlay i {
+  position: absolute;
+  top: 40%;
+  left: 47%;
+}
+.overlay:hover {
+  opacity: 1;
+}
+.subtle {
+  color: #999;
+}
+.game-description {
+  margin: 15px 0;
+}
+.reviews {
+  width: auto;
+  display: inline-block;
+  float: right;
+  margin: 20px 0 0 0;
+  text-align: center;
+}
+.reviews a {
+  color: #fff;
+}
+.reviews a:hover {
+  color: #fff;
+}
+.reviews a:active {
+  color: #fff;
+}
+.reviews a:visited {
+  color: #fff;
+}
+
+/*# sourceMappingURL=custom.css.map */

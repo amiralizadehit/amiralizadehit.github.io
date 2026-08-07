@@ -12,7 +12,12 @@
 @media (min-width: 1024px) {
   .c-header__header,
   .c-header__content {
-    height: 60vh;
+    height: 75vh;
+  }
+  .c-header__brand {
+    /* reserve room for the absolutely-positioned social buttons so long
+       subtitles wrap instead of running underneath them */
+    padding-right: 230px;
   }
 }
 

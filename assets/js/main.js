@@ -16,6 +16,27 @@ $(document).ready(function() {
 
   $("#ajax-content").load("./project.html");
 
+  function load_ajax_content(url) {
+    $("#ajax-content")
+      .html(
+        '<div class="c-preloader  js-preloader" style="padding: 0.5rem 0 4rem;"><div class="c-preloader__spinner  t-preloader__spinner"></div></div>'
+      )
+      .fadeIn(150, function() {
+        $("#ajax-content").load(url, function() {
+          $("#ajax-content").fadeIn(150);
+        });
+      });
+  }
+
+  function scroll_to_ajax_content_on_mobile() {
+    if (window.innerWidth < 1024) {
+      var target = document.getElementById("ajax-content");
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }
+
   $("#cvlink").click(function(e) {
     e.preventDefault();
     if (state === 1) {
@@ -24,10 +45,9 @@ $(document).ready(function() {
         color: "whitesmoke"
       });
       $("#projectlink").css({ color: "#999", border: "none" });
+      scroll_to_ajax_content_on_mobile();
       $("#ajax-content").fadeOut(150, function() {
-        $("#ajax-content").load("./cv.html", function() {
-          $("#ajax-content").fadeIn(150);
-        });
+        load_ajax_content("./cv.html");
       });
       state = 2;
     }
@@ -43,10 +63,9 @@ $(document).ready(function() {
         color: "whitesmoke"
       });
       $("#cvlink").css({ color: "#999", border: "none" });
+      scroll_to_ajax_content_on_mobile();
       $("#ajax-content").fadeOut(150, function() {
-        $("#ajax-content").load("./project.html", function() {
-          $("#ajax-content").fadeIn(150);
-        });
+        load_ajax_content("./project.html");
       });
     }
   });

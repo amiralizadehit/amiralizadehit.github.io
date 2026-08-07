@@ -16,7 +16,14 @@ $(document).ready(function() {
 
   let state = 1;
 
-  $("#ajax-content").load("./project.html");
+  function init_ajax_videos() {
+    document.querySelectorAll("#ajax-content video").forEach(function(video) {
+      video.load();
+      video.play().catch(function() {});
+    });
+  }
+
+  $("#ajax-content").load("./project.html", init_ajax_videos);
 
   function load_ajax_content(url) {
     $("#ajax-content")
@@ -25,6 +32,7 @@ $(document).ready(function() {
       )
       .fadeIn(150, function() {
         $("#ajax-content").load(url, function() {
+          init_ajax_videos();
           $("#ajax-content").fadeIn(150);
         });
       });

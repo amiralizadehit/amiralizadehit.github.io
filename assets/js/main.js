@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $.ajaxSetup({ cache: false });
+
   $("html").addClass("js-enabled");
 
   setup_nivo_lightbox();

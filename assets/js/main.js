@@ -23,6 +23,21 @@ $(document).ready(function() {
     });
   }
 
+  // Swap a click-to-play poster for the real YouTube iframe. Delegated from
+  // document so it survives #ajax-content being reloaded by the nav links.
+  $(document).on("click", ".video-facade", function() {
+    var facade = this;
+    var iframe = document.createElement("iframe");
+    iframe.className = "game-video game-video--16x9";
+    iframe.src = facade.dataset.videoSrc;
+    iframe.title = facade.dataset.videoTitle || "";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+    facade.replaceWith(iframe);
+  });
+
   $("#ajax-content").load("./project.html", init_ajax_videos);
 
   function load_ajax_content(url) {
